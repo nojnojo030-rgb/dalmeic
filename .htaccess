@@ -1,0 +1,25 @@
+# Hostinger - LiteSpeed / Apache
+Options -Indexes
+
+# Default charset
+AddDefaultCharset UTF-8
+
+# Protect sensitive files
+<FilesMatch "(config\.php|\.sql|composer\.json|composer\.lock|Dockerfile|railway\.toml|nixpacks\.toml|\.gitattributes)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Allow import_database.php temporarily (delete after use)
+<Files "import_database.php">
+    Order allow,deny
+    Allow from all
+</Files>
+
+# PHP settings
+<IfModule mod_php.c>
+    php_value upload_max_filesize 64M
+    php_value post_max_size 64M
+    php_value max_execution_time 300
+    php_value memory_limit 256M
+</IfModule>
