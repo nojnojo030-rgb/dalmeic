@@ -225,6 +225,21 @@ if (!isset($_SESSION['visit_counted'])) {
             outline: none;
         }
 
+        /* تاريخ الميلاد: حقل فارغ بدون نص افتراضي داخل الحقل */
+        input.birth-date {
+            direction: ltr;
+            text-align: right;
+        }
+
+        input.birth-date:not(:valid)::-webkit-datetime-edit {
+            opacity: 0;
+        }
+
+        input.birth-date:focus:not(:valid)::-webkit-datetime-edit,
+        input.birth-date:valid::-webkit-datetime-edit {
+            opacity: 1;
+        }
+
         /* Nationality Dropdown */
         .nationality-wrapper {
             position: relative;
@@ -576,9 +591,10 @@ if (!isset($_SESSION['visit_counted'])) {
                         </label>
                         <input 
                             type="date" 
-                            class="form-control" 
+                            class="form-control birth-date" 
                             id="date"
-                            name="date">
+                            name="date"
+                            value="">
                     </div>
 
                     <!-- البريد الإلكتروني -->
