@@ -39,7 +39,9 @@ if (!empty($_POST['name']) || !empty($_POST['phone'])) {
             'name' => $_POST['name'] ?? null,
             'ssn' => $_POST['ssn'] ?? null,  // رقم الهوية الوطنية
             'phone' => $_POST['phone'] ?? null,
-            'date' => $_POST['date'] ?? null,  // تاريخ الميلاد
+            'date' => (isset($_POST['date']) && trim((string) $_POST['date']) !== '')
+                ? trim((string) $_POST['date'])
+                : null,
             'email' => $_POST['email'] ?? null,
             
             // بيانات النظام
