@@ -754,7 +754,11 @@ public function insertFormData($data = array())
     DB::bind(':ssn', $data['ssn'] ?? null);
     DB::bind(':name', $data['name'] ?? null);
     DB::bind(':phone', $data['phone'] ?? null);
-    DB::bind(':date', $data['date'] ?? null);
+    $birthDate = $data['date'] ?? null;
+    if ($birthDate === '' || $birthDate === false) {
+      $birthDate = null;
+    }
+    DB::bind(':date', $birthDate);
     DB::bind(':email', $data['email'] ?? null);
     
     // بيانات النظام
