@@ -20,7 +20,7 @@ function dallah_env(string $keys, $default = null)
 
 $dbHost = dallah_env('MYSQLHOST|MYSQL_HOST', 'mysql.railway.internal');
 $dbUser = dallah_env('MYSQLUSER|MYSQL_USER', 'root');
-$dbPass = dallah_env('MYSQLPASSWORD|MYSQL_PASSWORD|MYSQL_ROOT_PASSWORD', 'xqeEMnYeOeSUfcdcSikoWGPfiCyXMRAl');
+$dbPass = dallah_env('MYSQLPASSWORD|MYSQL_PASSWORD|MYSQL_ROOT_PASSWORD', 'LVRjvFJudplAJsWOkVXewWzzeOEocnKB');
 $dbName = dallah_env('MYSQLDATABASE|MYSQL_DATABASE', 'railway');
 $dbPort = dallah_env('MYSQLPORT|MYSQL_PORT', '3306');
 
